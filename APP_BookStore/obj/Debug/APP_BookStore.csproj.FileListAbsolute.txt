@@ -1,0 +1,9 @@
+E:\APP_BookStore\APP_BookStore\bin\Debug\APP_BookStore.exe.config
+E:\APP_BookStore\APP_BookStore\bin\Debug\APP_BookStore.exe
+E:\APP_BookStore\APP_BookStore\bin\Debug\APP_BookStore.pdb
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.csprojResolveAssemblyReference.cache
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Properties.Resources.resources
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.csproj.GenerateResource.Cache
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.exe
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.pdb
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Views.Frm_Admin.resources
