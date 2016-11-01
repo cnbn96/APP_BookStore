@@ -16,6 +16,10 @@ namespace APP_BookStore.Controllers
         {
             return nvSer.GetAllData();
         }
+        public NhanVien GetNhanVien(String maNV)
+        {
+            return nvSer.getNhanVien(maNV);
+        }
         public bool AddNhanVien(NhanVien nv)
         {
             return nvSer.AddData(nv);

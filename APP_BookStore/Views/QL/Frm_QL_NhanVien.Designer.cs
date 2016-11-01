@@ -73,7 +73,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(12, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(702, 373);
+            this.panel2.Size = new System.Drawing.Size(707, 392);
             this.panel2.TabIndex = 0;
             // 
             // dtgvNhanVien
@@ -85,7 +85,7 @@
             this.dtgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvNhanVien.Location = new System.Drawing.Point(17, 134);
             this.dtgvNhanVien.Name = "dtgvNhanVien";
-            this.dtgvNhanVien.Size = new System.Drawing.Size(663, 234);
+            this.dtgvNhanVien.Size = new System.Drawing.Size(678, 253);
             this.dtgvNhanVien.TabIndex = 1;
             // 
             // panel3
@@ -104,16 +104,16 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(17, 42);
+            this.panel3.Location = new System.Drawing.Point(18, 42);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(663, 85);
+            this.panel3.Size = new System.Drawing.Size(676, 85);
             this.panel3.TabIndex = 0;
             // 
             // cbbChucVu
             // 
             this.cbbChucVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbChucVu.FormattingEnabled = true;
-            this.cbbChucVu.Location = new System.Drawing.Point(518, 17);
+            this.cbbChucVu.Location = new System.Drawing.Point(540, 17);
             this.cbbChucVu.Name = "cbbChucVu";
             this.cbbChucVu.Size = new System.Drawing.Size(121, 21);
             this.cbbChucVu.TabIndex = 3;
@@ -122,7 +122,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMatKhau.Location = new System.Drawing.Point(518, 48);
+            this.txtMatKhau.Location = new System.Drawing.Point(540, 48);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(121, 20);
@@ -134,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSDT.Location = new System.Drawing.Point(315, 48);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(121, 20);
+            this.txtSDT.Size = new System.Drawing.Size(134, 20);
             this.txtSDT.TabIndex = 2;
             // 
             // txtDiaChi
@@ -143,7 +143,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiaChi.Location = new System.Drawing.Point(315, 17);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(121, 20);
+            this.txtDiaChi.Size = new System.Drawing.Size(134, 20);
             this.txtDiaChi.TabIndex = 2;
             // 
             // txtTenNV
@@ -166,7 +166,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(454, 54);
+            this.label7.Location = new System.Drawing.Point(476, 54);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 1;
@@ -196,7 +196,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(454, 17);
+            this.label6.Location = new System.Drawing.Point(476, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 0;
@@ -241,7 +241,7 @@
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReload.Location = new System.Drawing.Point(12, 407);
+            this.btnReload.Location = new System.Drawing.Point(12, 426);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(75, 23);
             this.btnReload.TabIndex = 2;
@@ -252,7 +252,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.Location = new System.Drawing.Point(115, 407);
+            this.btnAdd.Location = new System.Drawing.Point(115, 426);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
@@ -263,7 +263,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnUpdate.Location = new System.Drawing.Point(226, 407);
+            this.btnUpdate.Location = new System.Drawing.Point(229, 426);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -274,7 +274,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Location = new System.Drawing.Point(331, 407);
+            this.btnSave.Location = new System.Drawing.Point(334, 426);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -285,7 +285,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.Location = new System.Drawing.Point(433, 407);
+            this.btnCancel.Location = new System.Drawing.Point(436, 426);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -296,7 +296,7 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(548, 407);
+            this.btnDelete.Location = new System.Drawing.Point(553, 426);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
@@ -307,7 +307,7 @@
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.Location = new System.Drawing.Point(639, 407);
+            this.btnBack.Location = new System.Drawing.Point(644, 426);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 2;
@@ -317,7 +317,7 @@
             // 
             // Frm_Admin
             // 
-            this.ClientSize = new System.Drawing.Size(729, 442);
+            this.ClientSize = new System.Drawing.Size(734, 461);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCancel);

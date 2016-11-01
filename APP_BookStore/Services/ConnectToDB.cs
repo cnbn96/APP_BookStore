@@ -32,7 +32,7 @@ namespace APP_BookStore.Services
         }
         public ConnectToDB()
         {
-            strCon = @"Data Source=BINH-LAPTOP\SQLEXPRESS;Initial Catalog=BookStoreDB;Integrated Security=True";
+            strCon = @"Data Source=BINH-LAPTOP\SQLEXPRESS;Initial Catalog=BookStoreDatabase;Integrated Security=True";
             Conn = new SqlConnection(strCon);
         }
         public bool OpenConn()

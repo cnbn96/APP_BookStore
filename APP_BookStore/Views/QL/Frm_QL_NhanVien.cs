@@ -86,7 +86,6 @@ namespace APP_BookStore.Views
 
         private void Frm_Admin_Load(object sender, EventArgs e)
         {
-
             DataTable dt = new System.Data.DataTable();
             dt = nvCtrl.GetAllNhanVien();
             dtgvNhanVien.DataSource = dt;
@@ -133,6 +132,7 @@ namespace APP_BookStore.Views
         private void btnReload_Click(object sender, EventArgs e)
         {
 
+            Console.WriteLine(nvCtrl.GetNhanVien("VIP001").TenNV.ToString());
             Frm_Admin_Load(sender, e);
         }
 

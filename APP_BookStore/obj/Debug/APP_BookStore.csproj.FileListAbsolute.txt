@@ -7,3 +7,4 @@ E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.csproj.GenerateResource.C
 E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.exe
 E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.pdb
 E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Views.Frm_Admin.resources
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Views.QL.Frm_QL_NXB.resources
