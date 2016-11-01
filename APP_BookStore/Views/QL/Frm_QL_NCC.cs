@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace APP_BookStore.Views.QL
 {
-    public partial class Frm_QL_NXB : Form
+    public partial class Frm_QL_NCC : Form
     {
 
-        NXBCtrl nxbCtrl = new NXBCtrl();
+        NCCCtrl nccCtrl = new NCCCtrl();
         private int flagSave = 0;
-        public Frm_QL_NXB()
+        public Frm_QL_NCC()
         {
             InitializeComponent();
         }
@@ -29,41 +29,58 @@ namespace APP_BookStore.Views.QL
             btnUpdate.Enabled = !e;
             btnSave.Enabled = e;
             btnCancel.Enabled = e;
-            txtMaNXB.Enabled = e;
-            txtTenNXB.Enabled = e;
+            txtMaNCC.Enabled = e;
+            txtTenNCC.Enabled = e;
             txtDiaChi.Enabled = e;
             txtSDT.Enabled = e;
         }
         private void clearData()
         {
-            txtMaNXB.Text = "";
-            txtTenNXB.Text = "";
+            txtMaNCC.Text = "";
+            txtTenNCC.Text = "";
             txtDiaChi.Text = "";
             txtSDT.Text = "";
         }
 
 
-        private void AssignData(NhaXuatBan nxb)
+        private void AssignData(NhaCungCap obj)
         {
-            nxb.MaNXB = txtMaNXB.Text.Trim();
-            nxb.TenNXB = txtTenNXB.Text.Trim();
-            nxb.DiaChi = txtDiaChi.Text.Trim();
-            nxb.SDT1 = Int32.Parse(txtSDT.Text.Trim());
+            obj.MaNCC = txtMaNCC.Text.Trim();
+            obj.TenNCC = txtTenNCC.Text.Trim();
+            obj.DiaChi = txtDiaChi.Text.Trim();
+            obj.SDT1 = Int32.Parse(txtSDT.Text.Trim());
         }
 
 
         private void DataBindings()
         {
-            txtMaNXB.DataBindings.Clear();
-            txtMaNXB.DataBindings.Add("Text", dtgvNXB.DataSource, "MaNXB");
-            txtTenNXB.DataBindings.Clear();
-            txtTenNXB.DataBindings.Add("Text", dtgvNXB.DataSource, "TenNXB");
+            txtMaNCC.DataBindings.Clear();
+            txtMaNCC.DataBindings.Add("Text", dtgvNCC.DataSource, "MaNCC");
+            txtTenNCC.DataBindings.Clear();
+            txtTenNCC.DataBindings.Add("Text", dtgvNCC.DataSource, "TenNCC");
             txtDiaChi.DataBindings.Clear();
-            txtDiaChi.DataBindings.Add("Text", dtgvNXB.DataSource, "DiaChi");
+            txtDiaChi.DataBindings.Add("Text", dtgvNCC.DataSource, "DiaChi");
             txtSDT.DataBindings.Clear();
-            txtSDT.DataBindings.Add("Text", dtgvNXB.DataSource, "SDT");
+            txtSDT.DataBindings.Add("Text", dtgvNCC.DataSource, "SDT");
         }
 
+
+
+
+        private void Frm_QL_NCC_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new System.Data.DataTable();
+            dt = nccCtrl.GetAllNXB();
+            dtgvNCC.DataSource = dt;
+            DataBindings();
+            DisEn(false);
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -81,34 +98,34 @@ namespace APP_BookStore.Views.QL
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            NhaXuatBan nxbO = new NhaXuatBan();
+            NhaCungCap nxbO = new NhaCungCap();
             AssignData(nxbO);
             if (flagSave == 0)
             {
-                if (nxbCtrl.AddNXB(nxbO))
+                if (nccCtrl.AddNCC(nxbO))
                     MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Thêm không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (nxbCtrl.UpdateNXB(nxbO))
+                if (nccCtrl.UpdateNCC(nxbO))
                     //if (nvCtrl.UpdateNhanVien(nvO))
                     MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Frm_QL_NXB_Load(sender, e);
+            Frm_QL_NCC_Load(sender, e);
         }
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            Frm_QL_NXB_Load(sender, e);
+            Frm_QL_NCC_Load(sender, e);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -116,12 +133,12 @@ namespace APP_BookStore.Views.QL
             DialogResult dr = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                if (nxbCtrl.DeleteNXB(txtMaNXB.Text))
+                if (nccCtrl.DeleteNCC(txtMaNCC.Text))
                     MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Frm_QL_NXB_Load(sender, e);
+            Frm_QL_NCC_Load(sender, e);
 
         }
 
@@ -129,25 +146,11 @@ namespace APP_BookStore.Views.QL
         {
             DialogResult dr = MessageBox.Show("Bạn có chắc muốn hủy thao tác đang làm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
-                Frm_QL_NXB_Load(sender, e);
+                Frm_QL_NCC_Load(sender, e);
             else
                 return;
         }
 
 
-        private void Frm_QL_NXB_Load(object sender, EventArgs e)
-        {
-            DataTable dt = new System.Data.DataTable();
-            dt = nxbCtrl.GetAllNXB();
-            dtgvNXB.DataSource = dt;
-            DataBindings();
-            DisEn(false);
-        }
-
-        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
-        }
     }
 }

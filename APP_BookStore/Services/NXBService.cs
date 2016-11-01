@@ -17,7 +17,7 @@ namespace APP_BookStore.Services
         public DataTable GetAllData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "Select * from NhanVien";
+            cmd.CommandText = "Select * from NhaXuatBan";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -34,7 +34,7 @@ namespace APP_BookStore.Services
             }
             return dt;
         }
-        public NhaXuatBan getNhanVien(String maNV)
+        public NhaXuatBan GetData(String maNV)
         {
             NhaXuatBan nxb = new NhaXuatBan();
             cmd.CommandText = String.Format("Select * from NhanVien where MaNV = '{0}' ", maNV);
@@ -68,7 +68,7 @@ namespace APP_BookStore.Services
         }
         public bool AddData(NhaXuatBan nxb)
         {
-            cmd.CommandText = String.Format("Insert into NhanVien values('{0}', N'{1}', N'{2}', '{3}') ", nxb.MaNXB, nxb.TenNXB, nxb.DiaChi, nxb.SDT1);
+            cmd.CommandText = String.Format("Insert into NhaXuatBan values('{0}', N'{1}', N'{2}', '{3}') ", nxb.MaNXB, nxb.TenNXB, nxb.DiaChi, nxb.SDT1);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -87,7 +87,7 @@ namespace APP_BookStore.Services
         }
         public bool UpdateData(NhaXuatBan nxb)
         {
-            cmd.CommandText = String.Format("update NhanVien set TenNXB=N'{0}', DiaChi=N'{1}', SDT='{2}' where MaNXB = '{3}'", nxb.TenNXB, nxb.DiaChi, nxb.SDT1, nxb.MaNXB);
+            cmd.CommandText = String.Format("update NhaXuatBan set TenNXB=N'{0}', DiaChi=N'{1}', SDT='{2}' where MaNXB = '{3}'", nxb.TenNXB, nxb.DiaChi, nxb.SDT1, nxb.MaNXB);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -107,7 +107,7 @@ namespace APP_BookStore.Services
 
         public bool DeleteData(string maNXB)
         {
-            cmd.CommandText = String.Format("delete NhanVien where MaNXB='{0}'", maNXB);
+            cmd.CommandText = String.Format("delete NhaXuatBan where MaNXB='{0}'", maNXB);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try

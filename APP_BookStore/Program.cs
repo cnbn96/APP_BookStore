@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using APP_BookStore.Views;
+using APP_BookStore.Views.QL;
 
 namespace APP_BookStore
 {
@@ -17,7 +18,7 @@ namespace APP_BookStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Admin());
+            Application.Run(new Frm_QL_NCC());
         }
     }
 }

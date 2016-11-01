@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace APP_BookStore.Services
 {
-    class NhanVienService
+    class NCCService
     {
         ConnectToDB con = new ConnectToDB();
         SqlCommand cmd = new SqlCommand();
@@ -17,7 +17,7 @@ namespace APP_BookStore.Services
         public DataTable GetAllData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "Select MaNV, TenNV, ChucVu, DiaChi, SDT, MatKhau from NhanVien";
+            cmd.CommandText = "Select * from NhaCungCap";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -34,30 +34,26 @@ namespace APP_BookStore.Services
             }
             return dt;
         }
-        public NhanVien GetData(String maNV)
+        public NhaCungCap GetData(String ma)
         {
-            NhanVien nv = new NhanVien();
-            cmd.CommandText = String.Format("Select * from NhanVien where MaNV = '{0}' ", maNV);
+            NhaCungCap ncc = new NhaCungCap();
+            cmd.CommandText = String.Format("Select * from NhanVien where MaNV = '{0}' ", ma);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
             {
                 con.OpenConn();
                 SqlDataReader reader = cmd.ExecuteReader();
-                int ordMaNV = reader.GetOrdinal("MaNV");
-                int ordTenNV = reader.GetOrdinal("TenNV");
-                int ordChucVu = reader.GetOrdinal("ChucVu");
+                int ordMaNV = reader.GetOrdinal("MaNCC");
+                int ordTenNV = reader.GetOrdinal("TenNCC");
                 int ordDiaChi = reader.GetOrdinal("DiaChi");
                 int ordSDT = reader.GetOrdinal("SDT");
-                int ordMatKhau = reader.GetOrdinal("MatKhau");
                 while (reader.Read())
                 {
-                    nv.MaNV = reader.GetString(ordMaNV);
-                    nv.TenNV = reader.GetString(ordTenNV);
-                    nv.ChucVu = reader.GetString(ordChucVu);
-                    nv.DiaChi = reader.GetString(ordDiaChi);
-                    nv.SDT1 = reader.GetInt32(ordSDT);
-                    nv.MatKhau = reader.GetString(ordMatKhau);
+                    ncc.MaNCC = reader.GetString(ordMaNV);
+                    ncc.TenNCC = reader.GetString(ordTenNV);
+                    ncc.DiaChi = reader.GetString(ordDiaChi);
+                    ncc.SDT1 = reader.GetInt32(ordSDT);
                 }
                 reader.Close();
                 con.CloseConn();
@@ -68,11 +64,11 @@ namespace APP_BookStore.Services
                 cmd.Dispose();
                 con.CloseConn();
             }
-            return nv;
+            return ncc;
         }
-        public bool AddData(NhanVien nv)
-        {            
-            cmd.CommandText = String.Format("Insert into NhanVien values('{0}', N'{1}', N'{2}', N'{3}', '{4}', '{5}','{6}') ", nv.MaNV, nv.TenNV, nv.ChucVu, nv.DiaChi, nv.GioiTinh != null ? nv.GioiTinh : 'M', nv.SDT1, nv.MatKhau);
+        public bool AddData(NhaCungCap ncc)
+        {
+            cmd.CommandText = String.Format("Insert into NhaCungCap values('{0}', N'{1}', N'{2}', '{3}') ", ncc.MaNCC, ncc.TenNCC, ncc.DiaChi, ncc.SDT1);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -89,9 +85,9 @@ namespace APP_BookStore.Services
             }
             return false;
         }
-        public bool UpdateData(NhanVien nv)
+        public bool UpdateData(NhaCungCap ncc)
         {
-            cmd.CommandText = String.Format("update NhanVien set TenNV=N'{0}', ChucVu=N'{1}', DiaChi=N'{2}', SDT='{3}', MatKhau='{4}' where MaNV='{5}' ", nv.TenNV, nv.ChucVu, nv.DiaChi, nv.SDT1, nv.MatKhau, nv.MaNV);
+            cmd.CommandText = String.Format("update NhaCungCap set TenNCC=N'{0}', DiaChi=N'{1}', SDT='{2}' where MaNCC = '{3}'", ncc.TenNCC, ncc.DiaChi, ncc.SDT1, ncc.MaNCC);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -108,48 +104,10 @@ namespace APP_BookStore.Services
             }
             return false;
         }
-       
-        public bool UpdateMK(NhanVien nv)
+
+        public bool DeleteData(string maNCC)
         {
-            cmd.CommandText = String.Format("update NhanVien set MatKhau='{0}' where MaNV='{1}'", nv.MatKhau, nv.MaNV);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con.Connection;
-            try
-            {
-                con.OpenConn();
-                cmd.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                string mex = ex.ToString();
-                cmd.Dispose();
-                con.CloseConn();
-            }
-            return false;
-        }
-        public string GetDataMK(string maNV)
-        {
-            cmd.CommandText = String.Format("Select IsNull(MatKhau, '') from NhanVien where MaNV='{0}' ", maNV);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con.Connection;
-            try
-            {
-                con.OpenConn();
-                var matKhau = cmd.ExecuteScalar();
-                return matKhau.ToString();
-            }
-            catch (Exception ex)
-            {
-                string mex = ex.ToString();
-                cmd.Dispose();
-                con.CloseConn();
-            }
-            return "";
-        }
-        public bool DeleteData(string maNV)
-        {
-            cmd.CommandText = String.Format("delete NhanVien where MaNV='{0}'", maNV);
+            cmd.CommandText = String.Format("delete NhaCungCap where MaNCC='{0}'", maNCC);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try

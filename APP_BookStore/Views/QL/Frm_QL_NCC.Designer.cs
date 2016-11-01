@@ -1,6 +1,6 @@
 ﻿namespace APP_BookStore.Views.QL
 {
-    partial class Frm_QL_NXB
+    partial class Frm_QL_NCC
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtgvNXB = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtgvNCC = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtTenNXB = new System.Windows.Forms.TextBox();
-            this.txtMaNXB = new System.Windows.Forms.TextBox();
+            this.txtTenNCC = new System.Windows.Forms.TextBox();
+            this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,22 +47,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNXB)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNCC)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dtgvNXB
-            // 
-            this.dtgvNXB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgvNXB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvNXB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNXB.Location = new System.Drawing.Point(17, 134);
-            this.dtgvNXB.Name = "dtgvNXB";
-            this.dtgvNXB.Size = new System.Drawing.Size(678, 253);
-            this.dtgvNXB.TabIndex = 1;
             // 
             // label1
             // 
@@ -71,11 +59,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(247, 28);
+            this.label1.Location = new System.Drawing.Point(247, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Thông tin nhà xuất bản";
+            this.label1.Size = new System.Drawing.Size(260, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Thông tin nhà cung cấp";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
@@ -84,12 +72,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dtgvNXB);
+            this.panel2.Controls.Add(this.dtgvNCC);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(14, 40);
+            this.panel2.Location = new System.Drawing.Point(14, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(707, 392);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 4;
+            // 
+            // dtgvNCC
+            // 
+            this.dtgvNCC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvNCC.Location = new System.Drawing.Point(17, 134);
+            this.dtgvNCC.Name = "dtgvNCC";
+            this.dtgvNCC.Size = new System.Drawing.Size(678, 253);
+            this.dtgvNCC.TabIndex = 1;
             // 
             // panel3
             // 
@@ -97,8 +97,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.txtSDT);
             this.panel3.Controls.Add(this.txtDiaChi);
-            this.panel3.Controls.Add(this.txtTenNXB);
-            this.panel3.Controls.Add(this.txtMaNXB);
+            this.panel3.Controls.Add(this.txtTenNCC);
+            this.panel3.Controls.Add(this.txtMaNCC);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label4);
@@ -127,19 +127,19 @@
             this.txtDiaChi.Size = new System.Drawing.Size(131, 20);
             this.txtDiaChi.TabIndex = 2;
             // 
-            // txtTenNXB
+            // txtTenNCC
             // 
-            this.txtTenNXB.Location = new System.Drawing.Point(132, 50);
-            this.txtTenNXB.Name = "txtTenNXB";
-            this.txtTenNXB.Size = new System.Drawing.Size(145, 20);
-            this.txtTenNXB.TabIndex = 2;
+            this.txtTenNCC.Location = new System.Drawing.Point(132, 50);
+            this.txtTenNCC.Name = "txtTenNCC";
+            this.txtTenNCC.Size = new System.Drawing.Size(145, 20);
+            this.txtTenNCC.TabIndex = 2;
             // 
-            // txtMaNXB
+            // txtMaNCC
             // 
-            this.txtMaNXB.Location = new System.Drawing.Point(132, 17);
-            this.txtMaNXB.Name = "txtMaNXB";
-            this.txtMaNXB.Size = new System.Drawing.Size(145, 20);
-            this.txtMaNXB.TabIndex = 2;
+            this.txtMaNCC.Location = new System.Drawing.Point(132, 17);
+            this.txtMaNCC.Name = "txtMaNCC";
+            this.txtMaNCC.Size = new System.Drawing.Size(145, 20);
+            this.txtMaNCC.TabIndex = 2;
             // 
             // label5
             // 
@@ -184,10 +184,10 @@
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.Location = new System.Drawing.Point(645, 434);
+            this.btnBack.Location = new System.Drawing.Point(646, 430);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 4;
+            this.btnBack.TabIndex = 11;
             this.btnBack.Text = "Trở về";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -195,10 +195,10 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(554, 434);
+            this.btnDelete.Location = new System.Drawing.Point(555, 430);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -206,10 +206,10 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.Location = new System.Drawing.Point(437, 434);
+            this.btnCancel.Location = new System.Drawing.Point(438, 430);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -217,10 +217,10 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Location = new System.Drawing.Point(335, 434);
+            this.btnSave.Location = new System.Drawing.Point(336, 430);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -228,10 +228,10 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnUpdate.Location = new System.Drawing.Point(230, 434);
+            this.btnUpdate.Location = new System.Drawing.Point(231, 430);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -239,10 +239,10 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.Location = new System.Drawing.Point(116, 434);
+            this.btnAdd.Location = new System.Drawing.Point(117, 430);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 9;
+            this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -250,15 +250,15 @@
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReload.Location = new System.Drawing.Point(13, 434);
+            this.btnReload.Location = new System.Drawing.Point(14, 430);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(75, 23);
-            this.btnReload.TabIndex = 10;
+            this.btnReload.TabIndex = 17;
             this.btnReload.Text = "Tải lại";
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // Frm_QL_NXB
+            // Frm_QL_NCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,11 +272,11 @@
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
-            this.Name = "Frm_QL_NXB";
-            this.Text = "Frm_QL_NXB";
-            this.Load += new System.EventHandler(this.Frm_QL_NXB_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNXB)).EndInit();
+            this.Name = "Frm_QL_NCC";
+            this.Text = "Frm_QL_NCC";
+            this.Load += new System.EventHandler(this.Frm_QL_NCC_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNCC)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -286,14 +286,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtgvNXB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dtgvNCC;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.TextBox txtTenNXB;
-        private System.Windows.Forms.TextBox txtMaNXB;
+        private System.Windows.Forms.TextBox txtTenNCC;
+        private System.Windows.Forms.TextBox txtMaNCC;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
