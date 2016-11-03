@@ -28,16 +28,16 @@ namespace APP_BookStore.Services
             }
             catch (Exception ex)
             {
-                string mex = ex.ToString();
+                System.Windows.Forms.MessageBox.Show("Error: " + ex.ToString(), "Lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 cmd.Dispose();
                 con.CloseConn();
             }
             return dt;
         }
-        public NhaXuatBan GetData(String maNV)
+        public NhaXuatBan GetData(String ma)
         {
             NhaXuatBan nxb = new NhaXuatBan();
-            cmd.CommandText = String.Format("Select * from NhanVien where MaNV = '{0}' ", maNV);
+            cmd.CommandText = String.Format("Select * from NhaXuatBan where MaNXB = '{0}' ", ma);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -60,7 +60,7 @@ namespace APP_BookStore.Services
             }
             catch (Exception ex)
             {
-                string mex = ex.ToString();
+                System.Windows.Forms.MessageBox.Show("Error: " + ex.ToString(), "Lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 cmd.Dispose();
                 con.CloseConn();
             }
@@ -79,7 +79,7 @@ namespace APP_BookStore.Services
             }
             catch (Exception ex)
             {
-                string mex = ex.ToString();
+                System.Windows.Forms.MessageBox.Show("Error: " + ex.ToString(), "Lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 cmd.Dispose();
                 con.CloseConn();
             }
@@ -98,7 +98,7 @@ namespace APP_BookStore.Services
             }
             catch (Exception ex)
             {
-                string mex = ex.ToString();
+                System.Windows.Forms.MessageBox.Show("Error: " + ex.ToString(), "Lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 cmd.Dispose();
                 con.CloseConn();
             }
@@ -118,7 +118,7 @@ namespace APP_BookStore.Services
             }
             catch (Exception ex)
             {
-                string mex = ex.ToString();
+                System.Windows.Forms.MessageBox.Show("Error: " + ex.ToString(), "Lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 cmd.Dispose();
                 con.CloseConn();
             }

@@ -38,7 +38,7 @@ namespace APP_BookStore.Models
         {
 
         }
-        public TacGia(string maTL, string tenTL, string diaChi, string sdt)
+        public TacGia(string maTL, string tenTL, string diaChi, int sdt)
         {
             this.maTG = maTG;
             this.tenTG = tenTG;

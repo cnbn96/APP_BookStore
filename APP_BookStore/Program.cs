@@ -18,7 +18,7 @@ namespace APP_BookStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_QL_NCC());
+            Application.Run(new Frm_QL_Sach());
         }
     }
 }
