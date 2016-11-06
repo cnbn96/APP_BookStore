@@ -59,6 +59,23 @@ namespace APP_BookStore.Views.QL
         }
         private void loadCBB()
         {
+            lstLoaiSach = tlSer.GetAllData().AsEnumerable().Select(m => new TheLoaiSach()
+            {
+                MaTL = m.Field<string>("MaTL"),
+                TenTL = m.Field<string>("TenTL")
+            }).ToList();
+            lstNXB = nxbSer.GetAllData().AsEnumerable().Select(m => new NhaXuatBan()
+            {
+                MaNXB = m.Field<string>("MaNXB"),
+                TenNXB = m.Field<string>("TenNXB")
+            }).ToList();
+            lstTG = tgSer.GetAllData().AsEnumerable().Select(m => new TacGia()
+            {
+                MaTG = m.Field<string>("MaTG"),
+                TenTG = m.Field<string>("TenTG")
+            }).ToList();
+
+
             cbbLoaiSach.Items.Clear();
             foreach (TheLoaiSach item in lstLoaiSach)
             {
@@ -150,19 +167,7 @@ namespace APP_BookStore.Views.QL
             
 
 
-            lstLoaiSach = tlSer.GetAllData().AsEnumerable().Select(m => new TheLoaiSach() { 
-                MaTL = m.Field<string>("MaTL"),
-                TenTL = m.Field<string>("TenTL")
-            }).ToList();
-            lstNXB = nxbSer.GetAllData().AsEnumerable().Select(m => new NhaXuatBan() { 
-                MaNXB = m.Field<string>("MaNXB"),
-                TenNXB = m.Field<string>("TenNXB")
-            }).ToList();
-            lstTG = tgSer.GetAllData().AsEnumerable().Select(m => new TacGia()
-            {
-                MaTG = m.Field<string>("MaTG"),
-                TenTG = m.Field<string>("TenTG")
-            }).ToList();
+            
             loadCBB();
             //DataSet ds = new DataSet("Sach");
             //DataRelation relationData;

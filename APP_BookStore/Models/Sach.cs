@@ -93,13 +93,13 @@ namespace APP_BookStore.Models
         }
         public Sach(){
         }
-        public Sach(string maSach, string tenSach, TheLoaiSach tls, NhaXuatBan nxb, TacGia tg, string ngayCapNhat, int giaBan, int giaNhap, int giamGia, int slTon)
+        public Sach(string maSach, string tenSach,string tl, string nxb, string tg, string ngayCapNhat, int giaBan, int giaNhap, int giamGia, int slTon)
         {
             this.maSach = maSach;
             this.tenSach = tenSach;
-            this.theLoai = tls;
-            this.nxb = nxb;
-            this.tg = tg;
+            this.maTL = tl;
+            this.maTG = tg;
+            this.maNXB = nxb;
             this.ngayCapNhat = ngayCapNhat;
             this.giaBan = giaBan;
             this.giaNhap = giaNhap;

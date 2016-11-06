@@ -37,7 +37,7 @@ namespace APP_BookStore.Services
         public NhaCungCap GetData(String ma)
         {
             NhaCungCap ncc = new NhaCungCap();
-            cmd.CommandText = String.Format("Select * from NhanVien where MaNV = '{0}' ", ma);
+            cmd.CommandText = String.Format("Select * from NhaCungCap where MaNCC = '{0}' ", ma);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -48,23 +48,34 @@ namespace APP_BookStore.Services
                 int ordTenNV = reader.GetOrdinal("TenNCC");
                 int ordDiaChi = reader.GetOrdinal("DiaChi");
                 int ordSDT = reader.GetOrdinal("SDT");
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    ncc.MaNCC = reader.GetString(ordMaNV);
-                    ncc.TenNCC = reader.GetString(ordTenNV);
-                    ncc.DiaChi = reader.GetString(ordDiaChi);
-                    ncc.SDT1 = reader.GetInt32(ordSDT);
+                    while (reader.Read())
+                    {
+                        ncc.MaNCC = reader.GetString(ordMaNV);
+                        ncc.TenNCC = reader.GetString(ordTenNV);
+                        ncc.DiaChi = reader.GetString(ordDiaChi);
+                        ncc.SDT1 = reader.GetInt32(ordSDT);
+                    }
+                }
+                else
+                {
+
+                    reader.Close();
+                    con.CloseConn();
+                    return null;
                 }
                 reader.Close();
                 con.CloseConn();
+                return ncc;
             }
             catch (Exception ex)
-            {
+            {                
                 string mex = ex.ToString();
                 cmd.Dispose();
                 con.CloseConn();
             }
-            return ncc;
+            return null;
         }
         public bool AddData(NhaCungCap ncc)
         {

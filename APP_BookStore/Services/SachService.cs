@@ -24,7 +24,7 @@ namespace APP_BookStore.Services
             {
                 con.OpenConn();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);                
+                sda.Fill(dt);
             }
             catch (Exception ex)
             {
@@ -53,26 +53,35 @@ namespace APP_BookStore.Services
                 int ordGiaBan = reader.GetOrdinal("GiaBan");
                 int ordGiaNhap = reader.GetOrdinal("GiaNhap");
                 int ordNgayCapNhat = reader.GetOrdinal("NgayCapNhat");
-                int ordGiamGia = reader.GetOrdinal("GiamGia");
-                while (reader.Read())
+                int ordGiamGia = reader.GetOrdinal("GiamGia");                
+                if (reader.HasRows)
                 {
-                    s.MaSach = reader.GetString(ordMaSach);
-                    s.TenSach = reader.GetString(ordTenSach);
-                    s.MaTL = reader.GetString(ordMaTL);
-                    s.MaTG = reader.GetString(ordMaTG);
-                    s.MaNXB = reader.GetString(ordMaNXB);
-                    s.SlTon = reader.GetInt32(ordSLTon);
-                    s.GiaBan = reader.GetInt32(ordGiaBan);
-                    s.GiaNhap = reader.GetInt32(ordGiaNhap);
-                    s.NgayCapNhat = reader.GetDateTime(ordNgayCapNhat).ToShortDateString();
-                    s.GiamGia = reader.GetInt32(ordGiamGia);
+                    while (reader.Read())
+                    {
+                        s.MaSach = reader.GetString(ordMaSach);
+                        s.TenSach = reader.GetString(ordTenSach);
+                        s.MaTL = reader.GetString(ordMaTL);
+                        s.MaTG = reader.GetString(ordMaTG);
+                        s.MaNXB = reader.GetString(ordMaNXB);
+                        s.SlTon = reader.GetInt32(ordSLTon);
+                        s.GiaBan = reader.GetInt32(ordGiaBan);
+                        s.GiaNhap = reader.GetInt32(ordGiaNhap);
+                        s.NgayCapNhat = reader.GetDateTime(ordNgayCapNhat).ToShortDateString();
+                        s.GiamGia = reader.GetInt32(ordGiamGia);
+                    }
+                }
+                else
+                {
+                    reader.Close();
+                    con.CloseConn();
+                    return null;
                 }
                 reader.Close();
                 con.CloseConn();
             }
             catch (Exception ex)
             {
-                string mex = ex.ToString();
+                System.Windows.Forms.MessageBox.Show("Error: " + ex.ToString(), "Lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 cmd.Dispose();
                 con.CloseConn();
             }
@@ -98,6 +107,9 @@ namespace APP_BookStore.Services
                 int ordGiaNhap = reader.GetOrdinal("GiaNhap");
                 int ordNgayCapNhat = reader.GetOrdinal("NgayCapNhat");
                 int ordGiamGia = reader.GetOrdinal("GiamGia");
+                if (reader.HasRows)
+                {
+
                 while (reader.Read())
                 {
                     Sach s = new Sach();
@@ -113,6 +125,11 @@ namespace APP_BookStore.Services
                     s.GiamGia = reader.GetInt32(ordGiamGia);
                     lst.Add(s);
                 }
+                }
+                else
+                {
+                    return null;
+                }
                 reader.Close();
                 con.CloseConn();
             }
@@ -126,7 +143,7 @@ namespace APP_BookStore.Services
         }
         public bool AddData(Sach s)
         {
-            cmd.CommandText = String.Format("Insert into Sach values('{0}', N'{1}', '{2}', N'{3}', '{4}', '{5}', '{6}', '{7}', CONVERT(varchar(25), '{8}', 131), '{9}') ", s.MaSach, s.TenSach, s.MaTL, s.MaTG, s.MaNXB, s.GiaBan, s.GiaNhap, s.SlTon, s.NgayCapNhat, s.GiamGia > 0 ? s.GiamGia : 0);
+            cmd.CommandText = String.Format("Insert into Sach values('{0}', N'{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', CONVERT(varchar(25), '{8}', 131), '{9}') ", s.MaSach, s.TenSach, s.MaTL, s.MaTG, s.MaNXB, s.GiaBan, s.GiaNhap, s.SlTon, s.NgayCapNhat, s.GiamGia > 0 ? s.GiamGia : 0);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
