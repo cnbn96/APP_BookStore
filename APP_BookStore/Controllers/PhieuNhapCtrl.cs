@@ -27,8 +27,8 @@ namespace APP_BookStore.Controllers
                     if (!(Object.ReferenceEquals(null, sachSer.GetData(ctpn.MaSach))))
                     {
                         int soLuongTon = sachSer.GetData(ctpn.MaSach).SlTon + ctpn.SoLuong;
-                        ctpnSer.AddData(ctpn);                    
                         sachSer.UpdateSL(ctpn.MaSach, soLuongTon, pn.NgayLapPN);
+                        ctpnSer.AddData(ctpn);                    
                     }
                     else
                     {
@@ -42,8 +42,8 @@ namespace APP_BookStore.Controllers
                                           Int32.Parse(row["GiaNhap"].ToString()),
                                           Int32.Parse(row["GiamGia"].ToString()),
                                           Int32.Parse(row["SoLuong"].ToString()));
-                        ctpnSer.AddData(ctpn);
                         sachSer.AddData(s);
+                        ctpnSer.AddData(ctpn);
                     }
                 }
             }catch(Exception ex){
