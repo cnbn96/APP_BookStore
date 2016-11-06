@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,13 @@ namespace APP_BookStore.Models
     class PhieuXuat
     {
         string maPX, maNV, ngayLapPN;
+        DataTable dtPX;
 
+        public DataTable DtPX
+        {
+            get { return dtPX; }
+            set { dtPX = value; }
+        }
         public PhieuXuat()
         {
 

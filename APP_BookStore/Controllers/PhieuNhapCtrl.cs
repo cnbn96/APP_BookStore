@@ -15,7 +15,9 @@ namespace APP_BookStore.Controllers
         CT_PhieuNhapService ctpnSer = new CT_PhieuNhapService();
         SachService sachSer = new SachService();
         public bool AddPhieuNhap(PhieuNhap pn){
-            try{
+            try
+            {
+                pnSer.AddData(pn);
                 foreach (DataRow row in pn.DtPN.Rows)
                 {
                     CT_PhieuNhap ctpn = new CT_PhieuNhap();
@@ -50,7 +52,7 @@ namespace APP_BookStore.Controllers
                 System.Windows.Forms.MessageBox.Show("Error: " + ex.ToString(), "Lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }
-            return pnSer.AddData(pn);
+            return true;
         }
         public DataTable ConvertDataGrid2DataTable(System.Windows.Forms.DataGridView dtgvTemp)
         {

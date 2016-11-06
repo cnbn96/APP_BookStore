@@ -11,3 +11,4 @@ E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Views.QL.Frm_QL_NCC.resou
 E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Views.QL.Frm_QL_Sach.resources
 E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Views.QL.Frm_QL_PhieuNhap.resources
 E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.csprojResolveAssemblyReference.cache
+E:\APP_BookStore\APP_BookStore\obj\Debug\APP_BookStore.Views.QL.Frm_QL_PhieuXuat.resources

@@ -28,7 +28,6 @@ namespace APP_BookStore.Views.QL
         List<TacGia> lstTG;
         List<TheLoaiSach> lstLoaiSach;
         bool flagAddNCC = false;
-        private object Records;
         public Frm_QL_PhieuNhap()
         {
             InitializeComponent();
@@ -326,7 +325,6 @@ namespace APP_BookStore.Views.QL
                                          txtGiamGia.Text.Trim(),
                                          txtSLNhap.Text.Trim()};
                 dtgvCT_PhieuNhap.Rows.Add(row);
-                dtgvCT_PhieuNhap.DataSource = this.Records;
                 ClearData();
             }
             catch (Exception ex)
